@@ -4,16 +4,23 @@
     <h4>Hello, Guest!</h4>
     <br>
     <br>
+
+    <!-- <mat-list role="list">
+        <mat-list-item *ngFor="let user of userList">
+          <a matLine href="...">{{ user.id }}</a>
+        </mat-list-item>
+      </mat-list> -->
+
     <div class="row">
-        Subscribe <input type="checkbox" [(ngModel)]="subscribed" />
+        Subscribe <input type="checkbox" [(ngModel)]="subscribed" (change)="setSub()"/>
     </div>
        
     <h6>Email Subscription </h6>
        
-    <p *ngIf="subscribed">
-        Guest user notifications: subscribed
+    <p *ngIf="subscribed" >
+        Guest user email notifications: subscribed
     </p>
-    <p *ngIf="!subscribed">
+    <p *ngIf="!subscribed" >
         Guest user email notifications: unsubscribed
     </p>
 </div>
