@@ -8,7 +8,7 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  public value = 'Clear me';
+  //public value = 'Clear me';
   public subscribed: boolean = false;
   public userList: UserModel[] = new Array();
   constructor(public userService: UserService){}
@@ -21,12 +21,11 @@ export class ProfileComponent implements OnInit {
   refreshProfile(): void {
     this.userService.getGuestUserList().subscribe((result: UserModel[]) => {
       this.userList = result;
-      console.log(this.userList[0].subscribed);
       this.subscribed = this.userList[0].subscribed;
+      console.log(this.subscribed);
     });
 
   }
-
 
   setSub(): void {
     console.log('yes hello!');
